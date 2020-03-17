@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-center ">
+        <h1 class="text-white">Weather Dashboard</h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2>Search for a City:</h2>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"  aria-label="search" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                    </div>
+                  </div>
+            </div>
+            <div id="previous-searches">
+                <!-- where previous searches will go -->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="container" id="current-city">
+            <!-- where current city info will go -->
+        </div>
+    </div>
+    
+</body>
+</html>
