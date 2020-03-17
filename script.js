@@ -11,4 +11,14 @@ $("#button").on("click" , function() {
         console.log(response);
       });
     
+      var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey;
+
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      .then(function(response) {
+        console.log(response);
+      });
+    
 })
