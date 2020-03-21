@@ -92,9 +92,11 @@ function getInfo() {
 $("#button").on("click", function (event) {
   event.preventDefault();
   getInfo();
-  var li = $("<li>").text(city)
+  var li = $("#city").val().trim();
+  var button = $("<button>")
+  button.append(li)
   
-  $("#previous-searches").append(li)
+  $("#previous-searches").append(button)
   
 
 
