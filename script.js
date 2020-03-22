@@ -92,6 +92,8 @@ $("#button").on("click", function (event) {
   $("#city").val("");
   
 
+  
+
 
 })
 
