@@ -1,5 +1,7 @@
-var savedCities = []
 
+var time = ("HH:mm:ss");
+    var dateFormat = moment().format("L");
+    
 
 function getInfo() {
   var APIkey = "aa448693cc6b5b40967cafecafdd7c15"
@@ -20,7 +22,7 @@ function getInfo() {
       let tempF = (result.main.temp - 273.15) * 1.80 + 32;
       tempF = Math.floor(tempF);
 
-      var cityName = $("<h4>").addClass("card-title").text(result.name)
+      var cityName = $("<h4>").addClass("card-title").text(result.name + " (" + dateFormat + ")")
       var temperature = $("<p>").addClass("card-text current-temp").text("Temperature: " + tempF + " °F");
       var humidity = $("<p>").addClass("card-text current-humidity").text("Humidity: " + response.main.humidity + "%")
       var wind = $("<p>").addClass("card-text current-wind").text("Wind Speed: " + response.wind.speed + " MPH");
@@ -48,18 +50,7 @@ function getInfo() {
           var uvIndex = response
           console.log(uvIndex.value)
 
-          var uvColor;
-          if (uvIndex.value <= 3) {
-           uvColor = "green"
-          }
-
-          else if (uvIndex.value > 3 || uvIndex.value <= 8) {
-            uvColor = "yellow"
-          }
-
-          else {
-            uvColor = "red"
-          }
+          
 
           
 
@@ -68,8 +59,7 @@ function getInfo() {
         $("#card-body").append(uv)
         });
 
-        // var uv = $("<p>").addClass("card-text uv-index").text("UV Index: " + uvIndex.value);
-        // $("#card-body").append(uv)
+       
 
     });
 
@@ -81,8 +71,10 @@ function getInfo() {
   })
     .then(function (response) {
       console.log(response);
-      var newrow = $("<div>").attr("class", "forecast");
-        $("#forecast").append(newrow);
+      
+        
+      
+        
 
     });
 
@@ -97,6 +89,7 @@ $("#button").on("click", function (event) {
   button.append(li)
   
   $("#previous-searches").append(button)
+  $("#city").val("");
   
 
 
